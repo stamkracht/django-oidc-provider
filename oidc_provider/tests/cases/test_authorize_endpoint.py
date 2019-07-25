@@ -1,4 +1,4 @@
-import logging
+
 
 try:
     from urllib.parse import urlencode, quote
@@ -19,7 +19,7 @@ except ImportError:
     from django.core.urlresolvers import reverse
 from django.test import (
     RequestFactory,
-    override_settings
+    override_settings,
 )
 from django.test import TestCase
 from jwkest.jwt import JWT
@@ -35,8 +35,6 @@ from oidc_provider.tests.app.utils import (
     is_code_valid,
 )
 from oidc_provider.views import AuthorizeView
-
-log = logging.getLogger(__name__)
 
 
 class AuthorizeEndpointMixin(object):
@@ -610,7 +608,7 @@ class TestAuthorizeResponseModeFormPost(TestCase, AuthorizeEndpointMixin):
 
     def test_user_declines_via_post(self):
         """
-        If error user does not consent when response_mode=form_post via POST
+        If error user does not consent when response_mode=form_post via POST 
         at authorize, the response_mode should be honored
 
         https://openid.net/specs/oauth-v2-multiple-response-types-1_0.html#MultiValueResponseTypes
@@ -1013,3 +1011,5 @@ class TestCreateResponseURI(TestCase):
 
         uri = authorization_endpoint.create_response_uri()
         self.assertIn('session_state=', uri)
+
+
