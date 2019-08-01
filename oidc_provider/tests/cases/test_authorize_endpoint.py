@@ -1011,5 +1011,3 @@ class TestCreateResponseURI(TestCase):
 
         uri = authorization_endpoint.create_response_uri()
         self.assertIn('session_state=', uri)
-
-
