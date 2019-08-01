@@ -608,7 +608,7 @@ class TestAuthorizeResponseModeFormPost(TestCase, AuthorizeEndpointMixin):
 
     def test_user_declines_via_post(self):
         """
-        If error user does not consent when response_mode=form_post via POST 
+        If error user does not consent when response_mode=form_post via POST
         at authorize, the response_mode should be honored
 
         https://openid.net/specs/oauth-v2-multiple-response-types-1_0.html#MultiValueResponseTypes
